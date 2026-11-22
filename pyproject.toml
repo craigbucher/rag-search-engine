@@ -1,0 +1,22 @@
+[project]
+name = "rag-search-engine"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "nltk==3.9.1",
+    "sentence-transformers>=6.3.0",
+    "torch>=2.15.0",
+]
+
+# PyTorch's CPU-only wheel index. explicit = true means uv only uses it
+# for packages pinned to it below, never for anything else.
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+# Pin torch to the CPU index
+[tool.uv.sources]
+torch = [{ index = "pytorch-cpu" }]
