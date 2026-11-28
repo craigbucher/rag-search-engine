@@ -1,0 +1,12 @@
+{
+  // Don't let Pylance analyze or index the virtualenv, caches, or data
+  "python.analysis.exclude": ["**/.venv", "**/__pycache__", "**/data", "**/models"],
+  "python.analysis.indexing": false,
+  "python.analysis.diagnosticMode": "openFilesOnly",
+  // Stop the file watcher from crawling large folders
+  "files.watcherExclude": {
+    "**/.venv/**": true,
+    "**/__pycache__/**": true,
+    "**/data/**": true
+  }
+}
